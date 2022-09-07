@@ -1,0 +1,3 @@
+/home/vishal.ahirwar/Dev/serialization/build/CMakeFiles/serializer.dir
+/home/vishal.ahirwar/Dev/serialization/build/CMakeFiles/edit_cache.dir
+/home/vishal.ahirwar/Dev/serialization/build/CMakeFiles/rebuild_cache.dir
