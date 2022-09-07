@@ -1,6 +1,6 @@
 #include"init.cc"
 int main()
 {
-  init();
+  init();//init.cc
   return 0;
 };

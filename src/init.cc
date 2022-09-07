@@ -7,21 +7,21 @@
 #include<fstream>
 void init()
 {
-  INPUT input{INPUT::SERIALISE};
-  std::vector<Record>records{};
-  UserInput(input);
+  INPUT input{INPUT::SERIALISE};//record.hpp
+  std::vector<Record>records{};//record.hpp
+  UserInput(input);//input.hpp
   switch(input)
   {
     case INPUT::SERIALISE:
     {
       auto write=[](std::vector<Record>&records)->void
       {
-        getInput(records);
-        displayRecords(records);
+        getInput(records);//input.hpp
+        displayRecords(records);//view.hpp
 
       if(std::ofstream archive{"records.json"})
       {
-        cereal::JSONOutputArchive ouput(archive);
+        cereal::JSONOutputArchive ouput(archive);//serializer.hpp
         ouput(cereal::make_nvp("records",records));
       };
     };
@@ -35,9 +35,9 @@ void init()
       {
         if(std::ifstream archive{"records.json"})
         {
-          cereal::JSONInputArchive input(archive);
+          cereal::JSONInputArchive input(archive);//serializer.hpp
           input(records);
-          displayRecords(records);
+          displayRecords(records);//view.hpp
         }else
         {
           std::cout<<"[error] failed to find records file!\n";
